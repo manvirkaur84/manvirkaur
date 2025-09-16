@@ -1,6 +1,6 @@
 # Welcome to my world!
 
-# Hi, I'm <Your Name> 👋
+# Hi, I'm Manvir Kaur 👋
 MS Business Analytics (In Progress) | BS Computer Science 
 
 ## Specialization Certificates:
@@ -9,6 +9,7 @@ https://www.coursera.org/account/accomplishments/specialization/certificate/WE04
 
 - 🔭 Currently building: Linear & Multiple Linear Regression projects
 - 💡 Interests: predictive modeling, clustering, logistic regression
+-  Working on mastering gradient descent concept
 
 ## Featured Projects
 - **Airfare Price Modeling (Multiple Linear Regression)** — RMSE ↓, key drivers found; reproducible pipeline [Code](link) · [Report](link)
