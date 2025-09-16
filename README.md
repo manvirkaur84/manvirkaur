@@ -1,2 +1,21 @@
-# manvirkaur
-about time I made a portfolio! Come take a look at what I have been working on!!
+# Welcome to my world!
+
+# Hi, I'm <Your Name> 👋
+MS Business Analytics (In Progress) | BS Computer Science 
+
+## Specialization Certificates:
+https://www.coursera.org/account/accomplishments/specialization/certificate/WE04E1LED2II 
+
+
+- 🔭 Currently building: Linear & Multiple Linear Regression projects
+- 💡 Interests: predictive modeling, clustering, logistic regression
+
+## Featured Projects
+- **Airfare Price Modeling (Multiple Linear Regression)** — RMSE ↓, key drivers found; reproducible pipeline [Code](link) · [Report](link)
+- **Customer Churn (Logistic Regression)** — AUC=0.87; actionable retention rules [Code](link) · [Write-up](link)
+- **City Segmentation (Clustering)** — K-Means for policy planning [Code](link) · [Dashboard](link)
+
+## Skills
+Python (pandas, scikit-learn), SQL, EDA, Visualization (Matplotlib/Plotly), Stats, Git/GitHub, Gradient Descent
+
+
