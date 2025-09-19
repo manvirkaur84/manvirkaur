@@ -10,4 +10,4 @@ Start here. Each bullet links to a detailed page.
 
 MSBA Assignments
 - Machine Learning
-- Logistic Regression: [Logistic Regression](Assignment-logistic-regression.md)
+- Logistic Regression: [Logistic Regression](Assignment-logistic-regression.ipynb)
