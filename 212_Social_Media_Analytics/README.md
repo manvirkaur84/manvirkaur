@@ -19,5 +19,5 @@ Lecture 2:
  
  Lecture 3:
  - Regression & Stats
-  * Oreos_Adv
-  * social_media_adv
+   * Oreos_Adv
+   * social_media_adv
