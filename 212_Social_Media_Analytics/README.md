@@ -12,3 +12,7 @@ Lecture 2:
   * Mass Market Strategy
   * Divide & Conquer Strategy
   * Excel Function: What-if analysis (Goal Seek)
+- User-Lifetime Value-RetnetionRate.xlsx
+  * Interest Rate, Discount Rate
+  * User Retention Rate
+  * Using Solver and excel funtion SUMXMY2(arrayX, arrayY)
