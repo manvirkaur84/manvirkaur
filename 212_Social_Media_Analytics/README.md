@@ -6,3 +6,9 @@ Lecture 1 Documents:
   * Sample size
   * Profitability Analysis
   * Fixed Cost, Variable Cost, Oppurtunity Cost
+ 
+Lecture 2:
+- Business Segmentation
+  * Mass Market Strategy
+  * Divide & Conquer Strategy
+  * Excel Function: What-if analysis (Goal Seek)
