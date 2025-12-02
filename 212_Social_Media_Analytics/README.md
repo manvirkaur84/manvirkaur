@@ -16,3 +16,8 @@ Lecture 2:
   * Interest Rate, Discount Rate
   * User Retention Rate
   * Using Solver and excel funtion SUMXMY2(arrayX, arrayY)
+ 
+ Lecture 3:
+ - Regression & Stats
+  * Oreos_Adv
+  * social_media_adv
