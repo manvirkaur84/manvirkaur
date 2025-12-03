@@ -27,6 +27,10 @@
       * Reading: KTN Regression Basics.pdf
  
 **Lecture 4:**
-- ...
+- Reading: MSBA_212_Non_Linear_pricing.pdf
+- Meta-Quantity Discount-ICA (1).xls
+   * Using Solver, to find optimal value of cutoff, HP, LP
+ 
+   * Two-Part Tariff
     
   
