@@ -1,0 +1,139 @@
+---
+title: "Analytics on Yelp datasets"
+author: "JR"
+date: "2024-09-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load Libraries if needed
+
+```{r libraries, message=FALSE, warning=FALSE}
+library(ggplot2)
+```
+
+## Business Data
+
+```{r load-business-data, message=FALSE, warning=FALSE}
+#setwd("D:/DATA_NEW/DELL_G/ACADEMIC/MSBA-212/ICA-Development/Week-3-Exercises")
+business_data <- read.csv(file= "dataset_business.json.csv")
+head(business_data,20)
+```
+
+```{r business-plots, message=FALSE, warning=FALSE}
+ggplot(business_data) + geom_bar(aes(x=state), fill ="gray") + ggtitle("Number of Businesses per State")
+ggplot(business_data) + geom_bar(aes(x=stars), fill ="gray") + ggtitle("Distribution of Business Stars")
+
+# Create a pie chart of star ratings
+ggplot(business_data, aes(x=factor(1), fill = factor(stars))) + 
+  geom_bar(width=1) + 
+  coord_polar(theta="y") +
+  ggtitle("Pie Chart of Business Stars")
+```
+
+## User Data
+
+```{r load-user-data, message=FALSE, warning=FALSE}
+user_data <- read.csv(file= "academic_dataset_user.json.csv")
+head(user_data, 1)
+user_votes <- user_data[, c("cool_votes", "funny_votes", "useful_votes")]
+cor(user_data$funny_votes, user_data$fans)
+```
+
+# Identify relationships
+
+```{r linear-model, message=FALSE, warning=FALSE}
+my.lm <- lm(useful_votes ~ review_count + fans, data=user_data)
+coeffs <- coefficients(my.lm)
+coeffs
+```
+
+```{r linear-model, message=FALSE, warning=FALSE}
+summ <- summary(my.lm)
+summ
+```
+
+## Cluster Analysis
+
+### Motivation for cluster analysis
+
+```{r cluster-motivation, message=FALSE, warning=FALSE}
+ggplot(user_data) + geom_bar(aes(x=review_count), fill="gray") + ggtitle("Distribution of Review Counts")
+qplot(x=review_count, data = user_data) + ggtitle("Histogram of Review Counts")
+qplot(x=log10(review_count), data = user_data) + ggtitle("Histogram of log10(Review Counts)")
+```
+
+### K-means Clustering
+
+```{r kmeans-clustering, message=FALSE, warning=FALSE}
+userCluster <- kmeans(user_data[, c(3,11)], 3)
+
+ggplot(user_data, aes(x = review_count, y = fans, color = as.factor(userCluster$cluster))) +
+  geom_point() +
+  labs(color = "Cluster") +
+  ggtitle("User Clusters by Review Count and Fans")
+
+# Find cluster means
+aggregate(user_data, by=list(userCluster$cluster), FUN=mean)
+
+# Identify cluster assignment
+withclus_data <- data.frame(user_data, cluster = userCluster$cluster)
+head(withclus_data)
+```
+
+### Hierarchical Clustering (Dendrogram)
+
+```{r hierarchical-clustering, message=FALSE, warning=FALSE}
+set.seed(123)
+
+# Take a random sample of 0.01% of the rows (adjust as needed since the data set is huge for computation purposes)
+sample_size <- floor(0.0001 * nrow(user_data))
+sample_indices <- sample(seq_len(nrow(user_data)), size = sample_size)
+user_sample <- user_data[sample_indices, ]
+
+# Compute the distance matrix on the sample
+dist_matrix <- dist(user_sample[, c(3, 11)])
+
+# Perform hierarchical clustering
+hc <- hclust(dist_matrix)
+
+# Plot the dendrogram
+plot(hc, main = "Hierarchical Clustering Dendrogram (0.01% Sample)", xlab = "", sub = "", ylab = "Height")
+```
+
+## Exercises
+
+
+1. Create an R Markdown (.Rmd) report and knit it to a PDF. Using the Yelp `business` and `user` datasets, build visualizations that explore multiple aspects of the data. Use variables different from those shown in the lecture example.
+
+2. Using your transformed variable(s), perform a cluster analysis for both datasets and interpret the resulting clusters. Evaluate the pros and cons of different cluster based classifcation for business strategy development.
+
+3. Fit linear models for both datasets and interpret the results. Identify potential pitfalls/assumptions in this type of analysis. (See the “Regression Basics” handout for additional intuition.)
+
+4. Upload both Rmd and PDF files.
+
+
+### Note on log-transformation for clustering
+
+
+Log transformation is a powerful preprocessing step for clustering. By reducing skew, damping outliers, and bringing features with very different scales onto a more comparable footing, it helps algorithms uncover the true structure in the data. Without it, distance- or density-based methods can be misled, producing suboptimal—or even incorrect—groupings.
+
+####Adjusting for skewed distributions
+
+Real-world features are often highly skewed, with a small number of very large values. Distance-based methods like k-means are especially sensitive to this: a feature with a huge range can dominate the distance metric and drown out subtler signals in other variables.
+
+Applying a log transform compresses large values and pulls them closer to the bulk of the data. Distributions become more symmetric, and no single feature overwhelms the calculation. The algorithm can then weigh all dimensions more evenly and discover clusters based on overall similarity, not just on one outsized feature.
+
+
+####Distance-based clustering (e.g., k-means)
+
+K-means partitions points by minimizing distances to cluster means. When features live on vastly different scales, the largest-scale feature dominates Euclidean distance.
+
+Before log: Suppose you cluster customers using income (thousands to millions) and number of purchases (single digits to hundreds). Income swamps the distance metric; purchases barely register.
+
+After log: Taking the logarithm of income compresses its range. Changes in income now affect distance on a scale comparable to changes in purchases, allowing k-means to find segments that reflect both behaviors.
+
+
