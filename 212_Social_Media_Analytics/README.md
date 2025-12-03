@@ -28,9 +28,11 @@
  
 **Lecture 4:**
 - Reading: MSBA_212_Non_Linear_pricing.pdf
+   * Two-Part Tariff
 - Meta-Quantity Discount-ICA (1).xls
    * Using Solver, to find optimal value of cutoff, HP, LP
- 
-   * Two-Part Tariff
+
+**Lecture 5:**
+- ...
     
   
