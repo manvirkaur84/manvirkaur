@@ -33,6 +33,10 @@
    * Using Solver, to find optimal value of cutoff, HP, LP
 
 **Lecture 5:**
-- ...
+- analytics-on-yelp-datasets.Rmd
+- Non-linear pricing_HWRK.xlsx
+- Concepts:
+   * Non-linear pricing
+   * uniform pricing
     
   
