@@ -12,7 +12,7 @@
   * Mass Market Strategy
   * Divide & Conquer Strategy
   * Excel Function: What-if analysis (Goal Seek)
-- User-Lifetime Value-RetnetionRate.xlsx
+- User-Lifetime Value-RetnetionRate-ICA&HWRK.xlsx (includes both in class work and corrected hwrk)
   * Interest Rate, Discount Rate
   * User Retention Rate
   * Using Solver and excel funtion SUMXMY2(arrayX, arrayY)
@@ -26,7 +26,7 @@
       * social media adv-ICA.xlsx
       * Reading: KTN Regression Basics.pdf
  
-**Lecture 4:** 
-- 
+**Lecture 4:**
+- ...
     
   
