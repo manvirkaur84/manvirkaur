@@ -42,3 +42,5 @@
 **Lecture 6:**
 - Meta Two Part Tariff Management.xlsx
 - Reading: Revenue Management PDF
+- ICA Price Bundling.xlsx
+- ICA Building Revenue Maximization.xlsx
