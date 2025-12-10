@@ -44,3 +44,5 @@
 - Reading: Revenue Management PDF
 - ICA Price Bundling.xlsx
 - ICA Building Revenue Maximization.xlsx
+- HW-Bundling-Revenue-Maximization-Social MEdia Consulting-ManvirKaur.xlsx
+   * Includes Segment Size
