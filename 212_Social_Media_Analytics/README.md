@@ -49,7 +49,7 @@
  
  **Lecture 7:**
  - Reading Conjoint Analysis.xlsx
- - ICA Binomial Probability (Flight Overbooking)
+ - ICA-Overbooking_Protection_Models (2).xlsx
  - ICA Conjoint Analysis.xlsx
 
 
