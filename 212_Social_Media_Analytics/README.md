@@ -53,6 +53,8 @@
  - Conjoint Analysis-Hotel Room Offerings (1) (2).xlsx
 
 
- **Lecture 6:**
+ **Lecture 8:**
+ - Reading: Market Basket Analysis
+ - ICA Market Basket Analysis-Exercise-1.docx
 
 
